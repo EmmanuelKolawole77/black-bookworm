@@ -1,0 +1,56 @@
+/* Login page. No CSS variables. */
+
+.login-body { background: #ffffff; }
+.login-layout { display: grid; grid-template-columns: 1.05fr 1fr; min-height: 100vh; }
+
+/* ---------- Brand panel ---------- */
+.login-brand {
+  display: flex; flex-direction: column; justify-content: space-between; gap: 2rem;
+  padding: 3.5rem; background: #1f4d3a; color: #ffffff; overflow: hidden;
+}
+.login-logo { margin: 0; font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em; }
+.login-brand h1 {
+  max-width: 14ch; margin-top: 3rem; color: #ffffff;
+  font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 800; letter-spacing: -0.04em;
+}
+.login-tag { max-width: 38ch; margin-top: 1.2rem; color: #d4e4dc; font-size: 1.1rem; }
+
+.login-covers { position: relative; height: 230px; }
+.login-covers img {
+  position: absolute; bottom: -30px; width: 120px; aspect-ratio: 2 / 3; object-fit: cover;
+  border-radius: 4px; background: #163a2b; box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+.login-covers img:nth-child(1) { left: 0; transform: rotate(-7deg); }
+.login-covers img:nth-child(2) { left: 105px; transform: rotate(-1deg); bottom: -15px; }
+.login-covers img:nth-child(3) { left: 215px; transform: rotate(5deg); }
+.login-covers img:nth-child(4) { left: 320px; transform: rotate(10deg); bottom: -40px; }
+
+/* ---------- Form panel ---------- */
+.login-panel { display: grid; place-items: center; padding: 2rem 1.5rem; }
+.login-card { width: 100%; max-width: 400px; }
+.login-card h2 { margin-bottom: 0.4rem; font-size: 2rem; font-weight: 700; }
+.login-card .muted { margin-bottom: 1.6rem; }
+.login-logo-mobile { display: none; margin-bottom: 2rem; color: #111111; }
+
+.login-card .form-label { color: #444444; font-size: 0.95rem; font-weight: 500; }
+.login-card .form-control { padding: 0.7rem 0.85rem; border: 1px solid #cccccc; border-radius: 4px; }
+.login-card .form-control:focus { border-color: #1f4d3a; box-shadow: 0 0 0 3px rgba(31, 77, 58, 0.2); }
+.login-card .login-switch { margin-top: 1rem; color: #666666; text-align: center; }
+
+.pw-wrap { position: relative; }
+.pw-wrap .form-control { padding-right: 2.8rem; }
+.pw-toggle { position: absolute; top: 50%; right: 0.5rem; transform: translateY(-50%); padding: 0.3rem 0.5rem; border: 0; background: none; color: #777777; }
+.pw-toggle:hover { color: #111111; }
+
+.or-line { display: flex; align-items: center; gap: 0.8rem; margin: 1.2rem 0; color: #999999; font-size: 0.9rem; }
+.or-line::before, .or-line::after { content: ""; flex: 1; height: 1px; background: #e6e6e6; }
+
+.demo-note { margin-top: 1.6rem; padding: 0.9rem 1rem; border-radius: 4px; background: #f7f7f5; color: #555555; font-size: 0.88rem; line-height: 1.5; }
+.demo-note code { color: #1f4d3a; font-weight: 700; }
+
+@media (max-width: 899.98px) {
+  .login-layout { grid-template-columns: 1fr; }
+  .login-brand { display: none; }
+  .login-logo-mobile { display: block; }
+  .login-panel { align-items: start; padding-top: 3.5rem; }
+}
